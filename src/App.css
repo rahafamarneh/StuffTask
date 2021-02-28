@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/AvenirLTStd-Roman.otf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-size: 12px;
+  font-family: 'Avenir';
+  font-weight: bold;
+  box-sizing: border-box;
+}
+body {
+  background-color: #c3c3c3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  padding: 10px 20px;
+  background-color: #fff;
+  width: 15%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+.optionsContainer {
+  padding: 0;
+}
+.selectedOptions {
+  padding-top: 10px;
+}
+.optionsContainer li {
+  padding: 10px 0;
+  list-style: none;
+  
+}
+.optionsContainer .optionName{
+  float: left;
+}
+.optionsContainer li.hovered .optionName {
+  color: #3ebfcf;
+}
+.optionsContainer input {
+  float: right;
+  width: 0;
+  height: 0;
+  margin: 0;
+  position: relative;
+}
+input.notChecked:after {
+  content: '+';
+  color: #000;
+}
+li.hovered input:after {
+  color: #3ebfcf;
+}
+li.checked label {
+  color: #c3c3c3;
+}
+input.checked:after {
+    height: 7px;
+    width: 3px;
+    border: solid #c3c3c3;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: "";
+    position: absolute;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-input {
+  padding: 12px  12px 12px 0;
+  border-bottom: 1px solid #c3c3c3;
 }
-
-.App-link {
-  color: #61dafb;
+.search-input input{
+  border: none;
+  outline: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-input-placeholder {
+  color: #c3c3c3;
 }
